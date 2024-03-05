@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#128275; KEY &#128274;</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="./assets/AAlura.svg" alt="A Alura">
+    </header>
+    
+    <main class="page">
+
+        <div class="conteudo">
+            <div class="coluna1">            
+                <textarea id="inputText" rows="20" cols="100%" placeholder="Digite seu texto"></textarea><br><br>
+                <button  class="botaoColar"  onclick="pasteText()">Colar</button>
+                <div class="conteudo-botao">
+                    <button class="botao" onclick="encryptText('encrypt')">
+                        &#128274; Criptografar
+                    </button>
+                    <button class="botao" onclick="encryptText('decrypt')">
+                        &#128275; Descriptografar
+                    </button>
+                </div>
+            </div>
+            <div class="coluna2">
+                <div class="output">
+                    <textarea id="outputText" rows="4" cols="50" readonly placeholder="Nenhuma mensagem encontrada"></textarea>
+                    <img id="lupaImg" src="./assets/Lupa.svg" alt="Lupa">
+                    <button  class="botaoCopiar" onclick="copyText()">Copiar </button>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+
+
+    <script>
+        function encryptText(action) {
+            var inputText = document.getElementById('inputText').value;
+            var outputText = '';
+
+            if (action === 'encrypt') {
+                for (var i = 0; i < inputText.length; i++) {
+                    var charCode = inputText.charCodeAt(i);
+                    outputText += String.fromCharCode(charCode + 1);
+                }
+            } else if (action === 'decrypt') {
+                for (var i = 0; i < inputText.length; i++) {
+                    var charCode = inputText.charCodeAt(i);
+                    outputText += String.fromCharCode(charCode - 1);
+                }
+            }
+
+            document.getElementById('outputText').value = outputText;
+        }
+
+        function copyText() {
+            var outputText = document.getElementById('outputText');
+            outputText.select();
+            document.execCommand('copy');
+            
+        }
+
+        function pasteText() {
+  var inputText = document.getElementById('inputText');
+  inputText.focus();
+
+   (navigator.clipboard) 
+    navigator.clipboard.readText().then(function(texto) {
+      inputText.value = texto;
+    });
+}
+
+document.getElementById('inputText').addEventListener('input', function() {
+    var lupaImg = document.getElementById('lupaImg');
+    if (this.value === '') {
+        lupaImg.style.display = 'block'; 
+    } else {
+        lupaImg.style.display = 'none'; 
+    }
+});
+    </script>
+</body>
+
+</html>

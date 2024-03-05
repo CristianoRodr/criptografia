@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #F3F5FC;
+    --cor-secundaria: #0A3871;
+    --cor-terciaria: #495057;
+    --cor-hover: #343A40;
+}
+.header{
+    max-width: 20px;;
+}
+
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-family: sans-serif;
+}
+
+.logo {
+    margin: 3% auto auto auto;
+    background-position-y: top;
+    width: 150px;
+}
+.page {
+    margin: 1% auto auto 3%;
+
+}
+
+::placeholder{
+    font-family: 'Inter';
+    font-style: 1rem;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 150%;
+    color: var(--cor-secundaria);
+
+
+}
+
+.conteudo-botao{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+
+
+.coluna1{
+    position: relative;
+    width: 60%;
+    flex-direction: column;
+    float: left;
+    margin-left: 10%;
+}
+
+#inputText{
+    font-family: 'Inter', Courier, monospace;
+    font-size: 2rem;
+    z-index: 1;
+    border-radius: 10px;
+    width: 90%;
+    height: 18cap;
+    resize: none;
+    position: relative;
+    padding: 15px;
+    color: var(--cor-secundaria);
+    background-color: transparent;
+    border: none;
+
+}
+#lupaImg{
+    z-index: 2;
+    position: absolute;  
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-60%, -55%);
+    pointer-events: none;
+    max-width: 60%;
+
+}
+#outputText{
+    border: none;
+    font-family: 'Inter', Courier, monospace;
+    font-size: 1.5cap;
+    z-index: 1;
+    border-radius: 10px;
+    width: 80%;
+    height: 40cap;
+    size: 90%;
+    resize: none;
+    position: relative;
+    padding: 15px;
+    color: var(--cor-secundaria);
+}
+
+.botaoColar {
+    
+    background-color: transparent; 
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+    padding: 1.5cap auto;
+    border-color: var(--cor-secundaria);
+    border-radius: 20px; 
+    cursor: pointer;
+   
+
+ 
+}
+.botaoCopiar {
+    
+    
+    background-color: transparent; 
+    color: var(--cor-secundaria);
+    font-size: 1rem;
+    padding: 1.5cap auto;
+    width: 70%;
+    border-color: var(--cor-secundaria);
+    border-radius: 20px; 
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;  
+    top: 95%; 
+    left: 50%; 
+    transform: translate(-55%, -30%);
+}
+
+.botao:hover {
+    background-color: #aeb5bd;
+}
+
+.coluna2{
+    position: relative;
+    width: 30%;
+    flex-direction: column;
+    float: right;
+   
+    
+}
+  
+.botao {
+    cursor: pointer;
+    background-color: var(--cor-secundaria);
+    width: 30%;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
+#outputText::placeholder{
+    color: #Fff;
+    text-align: center;
+    font-size: 20px;
+
+}
+
+@media screen and (max-width: 900px) {
+    .conteudo {
+        flex-direction: column;
+    }
+
+    .coluna1 {
+        width: 100%; 
+        float: none; 
+        margin-left: 0; 
+    }
+
+    .coluna2 {
+        width: 100%; 
+        float: none;  
+        margin-left: 0; 
+    }
+
+    #outputText{
+        margin-top: 5%;
+        z-index: 1;
+        border-radius: 30px;
+        width: 90%;
+        height: auto;
+        resize: none;
+        position: relative;
+        padding: 15px;
+        color: var(--cor-secundaria);
+    }
+    #lupaImg{
+       
+        display: none;
+    }
+    .botaoCopiar {
+    
+        width: 30%;
+        height: 20%;
+        top: 110%; 
+        left: 50%; 
+    }
+    #outputText::placeholder{
+    color: var(--cor-secundaria)
+    
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .conteudo-botao{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .botao{
+        width: 150px;
+        height: 40px;
+    }
+    
+   
+}
